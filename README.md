@@ -128,11 +128,11 @@ For security concerns, follow [SECURITY.md](SECURITY.md) and do not publish expl
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe -m ruff check src tests
-.\.venv\Scripts\python.exe -m build --no-isolation
+.\.venv\Scripts\python.exe -m build
 ```
 
 ## License
 
 Original project material is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE). Its terms allow only the purposes defined by that license; a separate permission from the relevant rights holder is required for uses outside those terms. This is a source-available, noncommercial project, not OSI-approved open source: the Open Source Definition does not permit licenses to restrict fields of endeavor such as business use ([OSI definition](https://opensource.org/osd)).
 
-Dependencies and third-party materials remain under their own licenses. See [external dependencies](docs/external-dependencies.md). The license summary above is informational; the complete terms in `LICENSE` govern.
+Runtime dependencies are listed in [`pyproject.toml`](pyproject.toml) and remain under their respective upstream licenses. The license summary above is informational; the complete terms in `LICENSE` govern.

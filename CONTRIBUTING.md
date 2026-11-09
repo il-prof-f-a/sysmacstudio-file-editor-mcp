@@ -12,7 +12,7 @@ Bug reports, documentation improvements, and carefully scoped code contributions
    ```powershell
    .\.venv\Scripts\python.exe -m pytest -q
    .\.venv\Scripts\python.exe -m ruff check src tests
-   .\.venv\Scripts\python.exe -m build --no-isolation
+   .\.venv\Scripts\python.exe -m build
    ```
 
 5. Review the diff and confirm it contains no real `.smc`/`.smc2` projects, extracted PLC code, customer or workplace identifiers, local paths, receipts, runtime profiles, credentials, or unsanitized IDE logs.
