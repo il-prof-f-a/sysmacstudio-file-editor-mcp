@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "sysmacstudio": {
+      "command": "C:/percorso/progetto/.venv/Scripts/python.exe",
+      "args": [
+        "-m",
+        "sysmac_mcp",
+        "--workspace",
+        "C:/percorso/progetto/workspace"
+      ],
+      "env": {
+        "SYSMAC_IDE_CLIENT": "C:/percorso/progetto/bridge/SysmacWcf/bin/SysmacWcf.exe",
+        "SYSMAC_IDE_HOST_ID": "sysmac-local",
+        "SYSMAC_IDE_RUNTIME_PROFILE": "C:/percorso/progetto/bridge/SysmacWcf/bin/runtime-profile-local.json"
+      }
+    }
+  }
+}
