@@ -56,9 +56,7 @@ Thumbs.db
 .env
 .env.*
 !.env.example
-/docs/superpowers
-/docs/*-plan.md
-/docs/*-proposal.md
+/docs/
 AGENT.md
 /.company
 /.ai

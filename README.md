@@ -18,7 +18,7 @@ The project is experimental and source-available under the PolyForm Noncommercia
 - Generates and imports a bounded subset of PLCopen IEC XML for ST, Ladder, globals, and selected DataTypes.
 - Optionally communicates with a locally installed Sysmac Studio through typed Windows-only operations, including open-copy, runtime status, rebuild, and guarded export.
 
-This is not a full IEC 61131-3 parser, compiler, or semantic checker. Unsupported or incomplete structures are reported as limitations. See [capabilities and limits](docs/capabilities.md) and the [validation matrix](docs/validation.md).
+This is not a full IEC 61131-3 parser, compiler, or semantic checker. Unsupported or incomplete structures are reported as limitations.
 
 ## Requirements
 
@@ -37,11 +37,11 @@ Windows is the primary development and validation platform. The Python core may 
 - A local Node.js executable and the verified Frida 17.23.2 package, to create the hash-pinned runtime profile used by runtime operations.
 - User approval of the normal Windows UAC prompt for operations that require elevation.
 
-The optional Windows integration depends on the local Sysmac Studio release. The repository does not include Omron binaries. The integration is experimental and must be validated against the exact IDE version and an authorized demonstration project. See [Sysmac Studio integration](docs/sysmac-wcf.md) and [runtime build and export](docs/runtime-build.md).
+The optional Windows integration depends on the local Sysmac Studio release. The repository does not include Omron binaries. The integration is experimental and must be validated against the exact IDE version and an authorized demonstration project.
 
 ### Optional EtherCAT NRBF helper
 
-Building the Windows x64 helper requires the .NET SDK version pinned in `bridge/SysmacFormats/global.json` (currently 10.0.403) and NuGet package restore. It is not needed for the basic MCP server. See [hardware and formats](docs/hardware-and-formats.md).
+Building the Windows x64 helper requires the .NET SDK version pinned in `bridge/SysmacFormats/global.json` (currently 10.0.403) and NuGet package restore. It is not needed for the basic MCP server.
 
 ## Install on Windows
 
