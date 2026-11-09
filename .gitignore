@@ -16,6 +16,7 @@ materiali/
 wheelhouse/
 ide-jobs/
 /evaluations/
+/tests/test_runtime_transport.py
 mcp-config.local.json
 mcp-config.local.json.bak-*
 runtime-profile-local.json

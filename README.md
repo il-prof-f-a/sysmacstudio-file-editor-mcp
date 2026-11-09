@@ -37,7 +37,7 @@ Windows is the primary development and validation platform. The Python core may 
 - A local Node.js executable and the verified Frida 17.23.2 package, to create the hash-pinned runtime profile used by runtime operations.
 - User approval of the normal Windows UAC prompt for operations that require elevation.
 
-The bridge uses local vendor interfaces that can vary by Sysmac Studio release. The repository does not include Omron binaries. The IDE integration is experimental and must be validated against the exact IDE version and an authorized demonstration project. See [Sysmac Studio integration](docs/sysmac-wcf.md) and [runtime build and export](docs/runtime-build.md).
+The optional Windows integration depends on the local Sysmac Studio release. The repository does not include Omron binaries. The integration is experimental and must be validated against the exact IDE version and an authorized demonstration project. See [Sysmac Studio integration](docs/sysmac-wcf.md) and [runtime build and export](docs/runtime-build.md).
 
 ### Optional EtherCAT NRBF helper
 
