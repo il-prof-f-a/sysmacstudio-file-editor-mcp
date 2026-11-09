@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sysmacstudio-file-editor-mcp"
+version = "0.1.0"
+readme = "README.md"
+description = "Offline MCP inspection and transactional editing of Omron Sysmac project copies"
+requires-python = ">=3.11"
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE"]
+dependencies = ["mcp>=2.3,<3", "pydantic>=2.12,<3", "lxml>=6.1,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=1", "ruff>=0.14", "build>=1"]
+
+[project.scripts]
+sysmac-mcp = "sysmac_mcp.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["local_project: uses the user-provided local SMC2 project"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]

@@ -1,0 +1,24 @@
+include README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md
+include requirements-dev.lock run-mcp.cmd mcp-config.example.json
+recursive-include .github *.md *.yml
+recursive-include tests *.py
+recursive-include contracts *.json
+prune docs/superpowers
+exclude docs/*-plan.md docs/*-proposal.md
+include docs/capabilities.md
+include docs/hardware-and-formats.md
+include docs/symbols-and-rename.md
+include docs/external-dependencies.md
+include docs/project-comparison.md
+include docs/validation.md
+include docs/sysmac-wcf.md
+include docs/completion-checklist.md
+include bridge/SysmacWcf/Program.cs
+include bridge/SysmacWcf/ElevatedTransport.cs
+include bridge/SysmacWcf/RuntimeRunner.cs
+include bridge/SysmacRuntime/*.cs bridge/SysmacRuntime/*.js bridge/SysmacRuntime/*.mjs
+include docs/runtime-build.md
+include docs/pous-and-tasks.md
+recursive-include scripts *.py *.ps1
+include bridge/SysmacFormats/Program.cs bridge/SysmacFormats/SysmacFormats.csproj
+include bridge/SysmacFormats/NuGet.Config bridge/SysmacFormats/global.json bridge/SysmacFormats/packages.lock.json
