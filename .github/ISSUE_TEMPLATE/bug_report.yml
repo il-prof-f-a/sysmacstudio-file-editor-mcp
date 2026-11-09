@@ -1,0 +1,69 @@
+name: Bug report
+description: Report a reproducible problem using sanitized information.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Do not attach `.smc`/`.smc2` files, PLC source, customer or workplace
+        names, machine/site identifiers, credentials, or unredacted IDE logs.
+        Use a synthetic example and remove local paths from diagnostic output.
+  - type: input
+    id: version
+    attributes:
+      label: Project version or commit
+      description: Release number or short Git commit hash.
+      placeholder: 0.1.0 or 1a2b3c4
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating environment
+      options:
+        - Windows
+        - WSL
+        - Linux
+        - macOS
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: 3.11.x
+    validations:
+      required: true
+  - type: textarea
+    id: operation
+    attributes:
+      label: Operation and sanitized reproduction steps
+      description: Include the MCP tool or CLI command and a minimal synthetic input description.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Paste only redacted error messages or logs.
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Data and authorization
+      options:
+        - label: I removed customer/workplace data, project files, credentials, local paths, and identifying log content.
+          required: true
+        - label: Any example or reproduction data I provide is synthetic or authorized for public disclosure.
+          required: true

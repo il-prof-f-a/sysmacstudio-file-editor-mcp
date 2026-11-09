@@ -1,0 +1,70 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,126}$",
+      "title": "Name",
+      "type": "string"
+    },
+    "data_type": {
+      "maxLength": 1024,
+      "minLength": 1,
+      "title": "Data Type",
+      "type": "string"
+    },
+    "scope": {
+      "default": "local",
+      "enum": [
+        "local",
+        "input",
+        "output",
+        "inout",
+        "external",
+        "temp",
+        "global"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "initial_value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Initial Value"
+    },
+    "retained": {
+      "default": false,
+      "title": "Retained",
+      "type": "boolean"
+    },
+    "constant": {
+      "default": false,
+      "title": "Constant",
+      "type": "boolean"
+    },
+    "comment": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Comment"
+    }
+  },
+  "required": [
+    "name",
+    "data_type"
+  ],
+  "title": "VariableSpec",
+  "type": "object"
+}

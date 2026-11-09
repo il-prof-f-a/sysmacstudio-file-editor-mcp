@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and design discussion
+    url: https://github.com/il-prof-f-a/sysmacstudio-file-editor-mcp/discussions
+    about: Ask a general question or discuss an idea without sharing project data.
+  - name: Security vulnerability reporting
+    url: https://github.com/il-prof-f-a/sysmacstudio-file-editor-mcp/security/advisories/new
+    about: Use private reporting when available; see SECURITY.md if the option is not enabled.
+  - name: Request a private contact channel
+    url: https://github.com/il-prof-f-a/sysmacstudio-file-editor-mcp/issues/new?template=private_contact.yml
+    about: Ask to discuss a sensitive matter privately without posting its details.

@@ -1,0 +1,38 @@
+name: Feature request or advice
+description: Suggest a capability, improvement, or documentation change.
+title: "[Idea]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Suggestions are welcome. Describe the general use case; do not include
+        customer names, PLC source, project archives, machine identifiers, or
+        confidential workplace details.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem or workflow should improve?
+      description: Keep the example general and non-confidential.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like the MCP to do?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or related tools
+      description: Optional.
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Data handling
+      options:
+        - label: I have not included customer/workplace data, credentials, project files, or confidential details.
+          required: true

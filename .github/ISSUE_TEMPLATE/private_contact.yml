@@ -1,0 +1,28 @@
+name: Request a private contact
+description: Ask for a private channel for a sensitive matter without posting its details.
+title: "[Private contact request]: "
+body:
+  - type: markdown
+    attributes:
+      value: >
+        This form is public. Do not include vulnerability details, personal
+        information, credentials, customer data, PLC source, or project files.
+        The maintainer will use the contact method available through their
+        GitHub profile to arrange a private conversation.
+  - type: dropdown
+    id: reason
+    attributes:
+      label: General reason for private contact
+      options:
+        - Security report
+        - Code of conduct concern
+        - Other sensitive matter
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have not included sensitive details or attachments in this public request.
+          required: true

@@ -1,0 +1,140 @@
+{
+  "$defs": {
+    "VariableSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,126}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "data_type": {
+          "maxLength": 1024,
+          "minLength": 1,
+          "title": "Data Type",
+          "type": "string"
+        },
+        "scope": {
+          "default": "local",
+          "enum": [
+            "local",
+            "input",
+            "output",
+            "inout",
+            "external",
+            "temp",
+            "global"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "initial_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Initial Value"
+        },
+        "retained": {
+          "default": false,
+          "title": "Retained",
+          "type": "boolean"
+        },
+        "constant": {
+          "default": false,
+          "title": "Constant",
+          "type": "boolean"
+        },
+        "comment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Comment"
+        }
+      },
+      "required": [
+        "name",
+        "data_type"
+      ],
+      "title": "VariableSpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,126}$",
+      "title": "Name",
+      "type": "string"
+    },
+    "source": {
+      "anyOf": [
+        {
+          "maxLength": 4194304,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source"
+    },
+    "rungs": {
+      "anyOf": [
+        {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "maxItems": 10000,
+          "minItems": 1,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rungs"
+    },
+    "variables": {
+      "items": {
+        "$ref": "#/$defs/VariableSpec"
+      },
+      "maxItems": 10000,
+      "title": "Variables",
+      "type": "array"
+    },
+    "return_type": {
+      "anyOf": [
+        {
+          "maxLength": 1024,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Return Type"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "NativePouDefinition",
+  "type": "object"
+}

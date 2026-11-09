@@ -1,0 +1,247 @@
+{
+  "$defs": {
+    "LadderNetwork": {
+      "additionalProperties": false,
+      "properties": {
+        "nodes": {
+          "items": {
+            "$ref": "#/$defs/LadderNode"
+          },
+          "maxItems": 1000,
+          "minItems": 3,
+          "title": "Nodes",
+          "type": "array"
+        },
+        "connections": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 4000,
+          "minItems": 2,
+          "title": "Connections",
+          "type": "array"
+        }
+      },
+      "required": [
+        "nodes",
+        "connections"
+      ],
+      "title": "LadderNetwork",
+      "type": "object"
+    },
+    "LadderNode": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 127,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "left_rail",
+            "right_rail",
+            "contact_no",
+            "contact_nc",
+            "coil",
+            "coil_negated"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "variable": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variable"
+        }
+      },
+      "required": [
+        "id",
+        "kind"
+      ],
+      "title": "LadderNode",
+      "type": "object"
+    },
+    "VariableSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,126}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "data_type": {
+          "maxLength": 1024,
+          "minLength": 1,
+          "title": "Data Type",
+          "type": "string"
+        },
+        "scope": {
+          "default": "local",
+          "enum": [
+            "local",
+            "input",
+            "output",
+            "inout",
+            "external",
+            "temp",
+            "global"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "initial_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Initial Value"
+        },
+        "retained": {
+          "default": false,
+          "title": "Retained",
+          "type": "boolean"
+        },
+        "constant": {
+          "default": false,
+          "title": "Constant",
+          "type": "boolean"
+        },
+        "comment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Comment"
+        }
+      },
+      "required": [
+        "name",
+        "data_type"
+      ],
+      "title": "VariableSpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,126}$",
+      "title": "Name",
+      "type": "string"
+    },
+    "kind": {
+      "default": "Program",
+      "enum": [
+        "Program",
+        "Function",
+        "FunctionBlock"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "language": {
+      "default": "ST",
+      "enum": [
+        "ST",
+        "LD"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "source": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source"
+    },
+    "network": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LadderNetwork"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "networks": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/LadderNetwork"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Networks"
+    },
+    "return_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Return Type"
+    },
+    "variables": {
+      "items": {
+        "$ref": "#/$defs/VariableSpec"
+      },
+      "maxItems": 10000,
+      "title": "Variables",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "PouSpec",
+  "type": "object"
+}
