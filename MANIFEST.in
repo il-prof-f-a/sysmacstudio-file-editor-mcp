@@ -3,6 +3,7 @@ include requirements-dev.lock run-mcp.cmd mcp-config.example.json
 recursive-include .github *.md *.yml
 recursive-include tests *.py
 recursive-include contracts *.json
+prune docs
 include bridge/SysmacWcf/Program.cs
 include bridge/SysmacWcf/ElevatedTransport.cs
 include bridge/SysmacWcf/RuntimeRunner.cs
